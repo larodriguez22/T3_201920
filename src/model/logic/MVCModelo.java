@@ -7,6 +7,7 @@ import java.util.Iterator;
 import com.opencsv.CSVReader;
 
 import model.data_structures.DoubleLinkedList;
+import model.sort.Shell;
 
 /**
  * Definicion del modelo del mundo
@@ -72,7 +73,14 @@ public class MVCModelo {
 	{
 		return datos.get(pos);
 	}
-
+	
+	public double ordenarPorShell(UBERTrip v)
+	{
+		Shell ordenar= new Shell();
+		//ordenar.sort(datos);
+		
+		return 0;
+	}
 	/**
 	 * Requerimiento eliminar dato
 	 * @param dato Dato a eliminar
@@ -83,24 +91,6 @@ public class MVCModelo {
 		datos.remove(pos);
 	}
 
-	public DoubleLinkedList<UBERTrip> nuevosServicios(int mes, int zona)
-	{
-
-		DoubleLinkedList<UBERTrip> pedidos= new DoubleLinkedList<UBERTrip>();
-
-		for(int i=0; i<datos.size();i++)
-		{
-			UBERTrip viaje= datos.get(i);
-			if(viaje.getSourceid()==zona)
-			{
-				pedidos.agregar(viaje);
-			}
-		}
-
-
-		return pedidos;
-
-	}
 	public DoubleLinkedList<UBERTrip> ViajesHoraDada(int hora) 
 	{
 		DoubleLinkedList<UBERTrip> lista= new DoubleLinkedList<UBERTrip>();
@@ -114,6 +104,6 @@ public class MVCModelo {
 			}
 		}
 		return lista;
-
 	}
+	
 }

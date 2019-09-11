@@ -14,6 +14,8 @@ public class Controller {
 
 	/* Instancia de la Vista*/
 	private MVCView view;
+	
+	private DoubleLinkedList<UBERTrip> viajes;
 
 	/**
 	 * Crear la vista y el modelo del proyecto
@@ -55,14 +57,14 @@ public class Controller {
 			case 2:
 				view.printMessage("--------- \n Seleccione la hora: ");
 				int hora = lector.nextInt();
-				DoubleLinkedList<UBERTrip> viajes = modelo.ViajesHoraDada(hora);
+				viajes = modelo.ViajesHoraDada(hora);
 				
 				view.printMessage("El número de viajes resultantes de la consulta es: "+viajes.size());
 				break;
 
 			case 3:
-				view.printMessage("--------- \\n Seleccione el trimestre:");
-				int trimestre0 = lector.nextInt();
+				view.printMessage("--------- \\n Ordenar por ShellSort:");
+				double tiempoMilisegundos = modelo.ordenarPorShell(viajes);
 				//view.printMessage("El numero total de viajes es:" + modelo.darTamano(trimestre0));
 				break;
 
@@ -88,7 +90,7 @@ public class Controller {
 				int zona1 = lector.nextInt();
 				System.out.println("--------- \n Seleccione el mes: ");
 				int mes3= lector.nextInt();
-				DoubleLinkedList<UBERTrip> viajes2 = modelo.nuevosServicios(mes3, zona1);
+				//DoubleLinkedList<UBERTrip> viajes2 = modelo.nuevosServicios(mes3, zona1);
 				int cont0=0;
 				int trimestre2;
 				if(mes3<=3)
