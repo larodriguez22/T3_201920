@@ -132,18 +132,5 @@ public class QuickPedantic {
         }
     }
 
-    // Read strings from standard input, sort them, and print.
-    public static void main(String[] args) {
-        String[] a = StdIn.readAllStrings();
-        QuickPedantic.sort(a);
-        show(a);
-        assert isSorted(a);
 
-        // display results again using select
-        StdOut.println();
-        for (int i = 0; i < a.length; i++) {
-            String ith = QuickPedantic.select(a, i);
-            StdOut.println(ith);
-        }
-    }
 }

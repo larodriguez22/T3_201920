@@ -19,7 +19,6 @@ public class MVCView
 			System.out.println("3. Ordenar ascendentemente los viajes resultantes de la consulta anterior por ShellSort");
 			System.out.println("4. Ordenar ascendentemente los viajes resultantes de la consulta por MergeSort");
 			System.out.println("5. Ordenar ascendentemente los viajes resultantes de la consulta por QuickSort");
-			System.out.println("6. Exit");
 			System.out.println("Dar el numero de opcion a resolver, luego oprimir tecla Return: (e.g., 1):");
 		}
 

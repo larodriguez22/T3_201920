@@ -25,6 +25,7 @@ package model.sort;
 
 import model.Std.StdIn;
 import model.Std.StdOut;
+import model.data_structures.DoubleLinkedList;
 
 /**
  *  The {@code Merge} class provides static methods for sorting an
@@ -38,9 +39,10 @@ import model.Std.StdOut;
  *  @author Kevin Wayne
  */
 public class Merge {
+	
 
     // This class should not be instantiated.
-    private Merge() { }
+    public Merge() { }
 
     // stably merge a[lo .. mid] with a[mid+1 ..hi] using aux[lo .. hi]
     private static void merge(Comparable[] a, Comparable[] aux, int lo, int mid, int hi) {
@@ -169,11 +171,6 @@ public class Merge {
      *
      * @param args the command-line arguments
      */
-    public static void main(String[] args) {
-        String[] a = StdIn.readAllStrings();
-        Merge.sort(a);
-        show(a);
-    }
 }
 
 /******************************************************************************

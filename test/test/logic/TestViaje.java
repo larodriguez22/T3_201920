@@ -1,10 +1,11 @@
 package test.logic;
-
+/*
 import junit.framework.TestCase;
 import model.logic.Viaje;
 
 public class TestViaje extends TestCase
 {
+	
 	 // -----------------------------------------------------------------
     // Atributos
     // -----------------------------------------------------------------
@@ -21,7 +22,7 @@ public class TestViaje extends TestCase
 
     /**
      * Construye tres fichas con valores diferentes
-     */
+     *//*
     private void setupEscenario1( )
     {
     	viaje1=new Viaje("1", "2", "3", "4", "5", "6", "7");
@@ -36,3 +37,4 @@ public class TestViaje extends TestCase
     	viaje3=null;
     }
 }
+*/

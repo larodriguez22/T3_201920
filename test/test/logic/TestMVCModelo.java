@@ -13,12 +13,12 @@ public class TestMVCModelo {
 	
 	@Before
 	public void setUp1() {
-		modelo= new MVCModelo(CAPACIDAD);
+		//modelo= new MVCModelo(CAPACIDAD);
 	}
 
 	public void setUp2() {
 		for(int i =0; i< CAPACIDAD;i++){
-			modelo.agregar(""+i);
+			//modelo.agregar(""+i);
 		}
 	}
 

@@ -14,8 +14,8 @@ public class Controller {
 
 	/* Instancia de la Vista*/
 	private MVCView view;
-	
-	private DoubleLinkedList<UBERTrip> viajes;
+
+	private int hora;
 
 	/**
 	 * Crear la vista y el modelo del proyecto
@@ -56,67 +56,59 @@ public class Controller {
 
 			case 2:
 				view.printMessage("--------- \n Seleccione la hora: ");
-				int hora = lector.nextInt();
-				viajes = modelo.ViajesHoraDada(hora);
-				
-				view.printMessage("El número de viajes resultantes de la consulta es: "+viajes.size());
+				hora = lector.nextInt();
+				UBERTrip[] viajes = (UBERTrip[]) modelo.ViajesHoraDada(hora);
+
+				view.printMessage("El número de viajes resultantes de la consulta es: "+viajes.length);
+
 				break;
+
 
 			case 3:
-				view.printMessage("--------- \\n Ordenar por ShellSort:");
-				double tiempoMilisegundos = modelo.ordenarPorShell(viajes);
-				//view.printMessage("El numero total de viajes es:" + modelo.darTamano(trimestre0));
-				break;
+				view.printMessage("--------- \\n Ordenar por MergeSort:");
+				double tiempoMilisegundos = modelo.ordenarPorMerge(hora);
+				view.printMessage("El numero total de viajes es:" + tiempoMilisegundos);
 
+				for(int i=0; i<10;i++)
+				{
+					view.printMessage("Informacion viaje1: "+ modelo.buscar(i).getSourceid()+", "+modelo.buscar(i).getDstid()+", "+modelo.buscar(i).getHod()+", "+modelo.buscar(i).getMean_travel_time());
+				}
+
+				for(int i=modelo.darTamano(); i>modelo.darTamano()-10;i--)
+				{
+					view.printMessage("Informacion viaje1: "+ modelo.buscar(i).getSourceid()+", "+modelo.buscar(i).getDstid()+", "+modelo.buscar(i).getHod()+", "+modelo.buscar(i).getMean_travel_time());
+				}
+				break;
 			case 4:
-				view.printMessage("--------- \nDar Seleccionar el mes deseado: ");
-				int mes2 = lector.nextInt();
-				int trimestre1;
-				if(mes2<=3)
+				view.printMessage("--------- \\n Ordenar por ShellSort:");
+				double tiempoMilisegundos2 = modelo.ordenarPorShell(hora);
+				view.printMessage("El numero total de viajes es:" + tiempoMilisegundos2);
+
+				for(int i=0; i<10;i++)
 				{
-					trimestre1=0;
+					view.printMessage("Informacion viaje1: "+ modelo.buscar(i).getSourceid()+", "+modelo.buscar(i).getDstid()+", "+modelo.buscar(i).getHod()+", "+modelo.buscar(i).getMean_travel_time());
 				}
-				else
+
+				for(int i=modelo.darTamano(); i>modelo.darTamano()-10;i--)
 				{
-					trimestre1=1;
+					view.printMessage("Informacion viaje1: "+ modelo.buscar(i).getSourceid()+", "+modelo.buscar(i).getDstid()+", "+modelo.buscar(i).getHod()+", "+modelo.buscar(i).getMean_travel_time());
 				}
-				//int numero = modelo.darViajesMes(mes2);
-				//double porcentaje = (numero*100)/modelo.darTamano(trimestre1);
-				//view.printMessage("El total de viajes del mes "+mes2+ " Es: "+numero+ ". Y su porcentaje es: "+porcentaje );
 				break;
+			case 5:
+				view.printMessage("--------- \\n Ordenar por QuickSort:");
+				double tiempoMilisegundos3 = modelo.ordenarPorQuick(hora);
+				view.printMessage("El numero total de viajes es:" + tiempoMilisegundos3);
 
-			case 5: 
-				view.printMessage("--------- \n Seleccione la zona: ");
-				int zona1 = lector.nextInt();
-				System.out.println("--------- \n Seleccione el mes: ");
-				int mes3= lector.nextInt();
-				//DoubleLinkedList<UBERTrip> viajes2 = modelo.nuevosServicios(mes3, zona1);
-				int cont0=0;
-				int trimestre2;
-				if(mes3<=3)
+				for(int i=0; i<10;i++)
 				{
-					trimestre2=0;
+					view.printMessage("Informacion viaje1: "+ modelo.buscar(i).getSourceid()+", "+modelo.buscar(i).getDstid()+", "+modelo.buscar(i).getHod()+", "+modelo.buscar(i).getMean_travel_time());
 				}
-				else
-				{
-					trimestre2=1;
-				}
-				for(UBERTrip i: viajes2)
-				{
-				//	if(i.getMonth()==mes3&&i.getSourceid()==zona1)
-					{
-						cont0++;
-					}
-				}
-				//double porcentaje2 = (cont0*100)/modelo.darTamano(trimestre2);
-				//view.printMessage("El total de viajes del mes "+mes3+ " y zona de origen: "+zona1+" Es: "+cont0+ ". Y su porcentaje es: "+porcentaje2);
-				break;	
 
-			case 6: 
-				System.out.println("--------- \n Hasta pronto !! \n---------"); 
-				lector.close();
-				fin = true;
-				break;	
+				for(int i=modelo.darTamano(); i>modelo.darTamano()-10;i--)
+				{
+					view.printMessage("Informacion viaje1: "+ modelo.buscar(i).getSourceid()+", "+modelo.buscar(i).getDstid()+", "+modelo.buscar(i).getHod()+", "+modelo.buscar(i).getMean_travel_time());
+				}
+				break;
 
 			default: 
 				System.out.println("--------- \n Opcion Invalida !! \n---------");

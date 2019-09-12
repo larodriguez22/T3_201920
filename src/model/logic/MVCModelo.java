@@ -7,8 +7,10 @@ import java.util.Iterator;
 import com.opencsv.CSVReader;
 
 import model.data_structures.DoubleLinkedList;
+import model.sort.Merge;
+import model.sort.QuickPedantic;
 import model.sort.Shell;
-
+import view.MVCView;
 /**
  * Definicion del modelo del mundo
  *
@@ -18,7 +20,7 @@ public class MVCModelo {
 	 * Atributos del modelo del mundo
 	 */
 	private DoubleLinkedList<UBERTrip> datos;
-
+	private MVCView view;
 	private int tamano;
 	private UBERTrip viaje;
 
@@ -74,12 +76,38 @@ public class MVCModelo {
 		return datos.get(pos);
 	}
 	
-	public double ordenarPorShell(UBERTrip v)
+	public double ordenarPorShell(int hora)
 	{
 		Shell ordenar= new Shell();
-		//ordenar.sort(datos);
+		long startTime = System.currentTimeMillis();// medición tiempo actual
+		ordenar.sort(ViajesHoraDada(hora));
+		long endTime = System.currentTimeMillis(); // medición tiempo actual
+		long duration = endTime - startTime;
+		view.printMessage("Tiempo de ordenamiento ShellSort: " + duration + " milisegundos");
+		return duration;
+	}
+	
+	public double ordenarPorMerge(int hora)
+	{
+		Merge ordenar= new Merge();
+		long startTime = System.currentTimeMillis();// medición tiempo actual
+		ordenar.sort(ViajesHoraDada(hora));
+		long endTime = System.currentTimeMillis(); // medición tiempo actual
+		long duration = endTime - startTime;
+		view.printMessage("Tiempo de ordenamiento MergeSort: " + duration + " milisegundos");
+		return duration;
+	}
+	
+	public double ordenarPorQuick(int hora)
+	{
+		QuickPedantic ordenar= new QuickPedantic();
+		long startTime = System.currentTimeMillis();// medición tiempo actual
+		ordenar.sort(ViajesHoraDada(hora));
+		long endTime = System.currentTimeMillis(); // medición tiempo actual
+		long duration = endTime - startTime;
+		view.printMessage("Tiempo de ordenamiento QuickSort: " + duration + " milisegundos");
 		
-		return 0;
+		return duration;
 	}
 	/**
 	 * Requerimiento eliminar dato
@@ -91,19 +119,32 @@ public class MVCModelo {
 		datos.remove(pos);
 	}
 
-	public DoubleLinkedList<UBERTrip> ViajesHoraDada(int hora) 
+	public Comparable[] ViajesHoraDada(int hora) 
 	{
-		DoubleLinkedList<UBERTrip> lista= new DoubleLinkedList<UBERTrip>();
+		int i=0;
+		Iterator iterador=datos.iterator();
 		Iterator ite=datos.iterator();
 		while(ite.hasNext())
 		{
 			UBERTrip viaje=(UBERTrip) ite.next();
 			if(viaje.getHod()==hora)
 			{
-				lista.agregar(viaje);
+				i++;
+			}
+		}
+		Comparable[] lista= new Comparable[i];
+		int j=0;
+		while(iterador.hasNext())
+		{
+			UBERTrip viaje=(UBERTrip) iterador.next();
+			if(viaje.getHod()==hora)
+			{
+				lista[j]=viaje;
+				j++;
 			}
 		}
 		return lista;
+		
 	}
 	
 }

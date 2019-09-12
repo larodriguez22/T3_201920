@@ -120,11 +120,6 @@ public class Shell {
      *
      * @param args the command-line arguments
      */
-    public static void main(String[] args) {
-        String[] a = StdIn.readAllStrings();
-        Shell.sort(a);
-        show(a);
-    }
 
 }
 

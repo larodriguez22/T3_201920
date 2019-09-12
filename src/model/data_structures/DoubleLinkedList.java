@@ -164,5 +164,7 @@ public class DoubleLinkedList<T> implements IDoubleLinkedList<T>
 		return new DoubleLinkedListIterator();
 	}
 
+	
+}
+	
 
-	}
