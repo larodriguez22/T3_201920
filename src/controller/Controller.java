@@ -64,7 +64,7 @@ public class Controller {
 
 			case 3:
 				view.printMessage("--------- \\n Ordenar por ShellSort:");
-				double tiempoMilisegundos = modelo.ordenarPorShell(viajes);
+				//double tiempoMilisegundos = modelo.ordenarPorShell(viajes);
 				//view.printMessage("El numero total de viajes es:" + modelo.darTamano(trimestre0));
 				break;
 
@@ -101,7 +101,7 @@ public class Controller {
 				{
 					trimestre2=1;
 				}
-				for(UBERTrip i: viajes2)
+				//for(UBERTrip i: viajes2)
 				{
 				//	if(i.getMonth()==mes3&&i.getSourceid()==zona1)
 					{

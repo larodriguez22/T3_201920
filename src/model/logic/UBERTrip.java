@@ -11,7 +11,7 @@ public class UBERTrip implements Comparable<UBERTrip>
 	private double geometric_mean_travel_time;
 	private double geometric_standard_deviation_travel_time;
 	
-	UBERTrip(String _sourceid, String _dstid, String _hod, String _mean_travel_time, String _standard_deviation_travel_time, String _geometric_mean_travel_time, String _geometric_standard_deviation_travel_time)
+	public UBERTrip(String _sourceid, String _dstid, String _hod, String _mean_travel_time, String _standard_deviation_travel_time, String _geometric_mean_travel_time, String _geometric_standard_deviation_travel_time)
 	{
 		setSourceid(Double.parseDouble(_sourceid));
 		setDstid(Double.parseDouble(_dstid));
