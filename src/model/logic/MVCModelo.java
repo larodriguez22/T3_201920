@@ -79,7 +79,7 @@ public class MVCModelo {
 	public double ordenarPorShell(int hora)
 	{
 		Shell ordenar= new Shell();
-<<<<<<< HEAD
+
 		long startTime = System.currentTimeMillis();// medición tiempo actual
 		ordenar.sort(ViajesHoraDada(hora));
 		long endTime = System.currentTimeMillis(); // medición tiempo actual
@@ -109,15 +109,6 @@ public class MVCModelo {
 		view.printMessage("Tiempo de ordenamiento QuickSort: " + duration + " milisegundos");
 		
 		return duration;
-=======
-		//ordenar.sort(datos);
-		long startTime = System.currentTimeMillis(); // medición tiempo actual
-		// this.algoritmoOrdenarXXXXX(viajes_A_Ordenar);
-		 long endTime = System.currentTimeMillis(); // medición tiempo actual
-		 long duration = endTime - startTime; // duracion de ejecucion del algoritmo
-		// view.printMensage("Tiempo de ordenamiento XXXXX: " + duration + " milisegundos");
-		return 0;
->>>>>>> fd37f881e1db17f4b6f4266252675a896d078f4f
 	}
 	/**
 	 * Requerimiento eliminar dato

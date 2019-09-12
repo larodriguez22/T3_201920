@@ -65,16 +65,10 @@ public class Controller {
 
 
 			case 3:
-<<<<<<< HEAD
 				view.printMessage("--------- \\n Ordenar por MergeSort:");
 				double tiempoMilisegundos = modelo.ordenarPorMerge(hora);
 				view.printMessage("El numero total de viajes es:" + tiempoMilisegundos);
-=======
 				view.printMessage("--------- \\n Ordenar por ShellSort:");
-				//double tiempoMilisegundos = modelo.ordenarPorShell(viajes);
-				//view.printMessage("El numero total de viajes es:" + modelo.darTamano(trimestre0));
-				break;
->>>>>>> fd37f881e1db17f4b6f4266252675a896d078f4f
 
 				for(int i=0; i<10;i++)
 				{
@@ -86,6 +80,7 @@ public class Controller {
 					view.printMessage("Informacion viaje1: "+ modelo.buscar(i).getSourceid()+", "+modelo.buscar(i).getDstid()+", "+modelo.buscar(i).getHod()+", "+modelo.buscar(i).getMean_travel_time());
 				}
 				break;
+				
 			case 4:
 				view.printMessage("--------- \\n Ordenar por ShellSort:");
 				double tiempoMilisegundos2 = modelo.ordenarPorShell(hora);
@@ -101,6 +96,7 @@ public class Controller {
 					view.printMessage("Informacion viaje1: "+ modelo.buscar(i).getSourceid()+", "+modelo.buscar(i).getDstid()+", "+modelo.buscar(i).getHod()+", "+modelo.buscar(i).getMean_travel_time());
 				}
 				break;
+				
 			case 5:
 				view.printMessage("--------- \\n Ordenar por QuickSort:");
 				double tiempoMilisegundos3 = modelo.ordenarPorQuick(hora);
@@ -110,12 +106,9 @@ public class Controller {
 				{
 					view.printMessage("Informacion viaje1: "+ modelo.buscar(i).getSourceid()+", "+modelo.buscar(i).getDstid()+", "+modelo.buscar(i).getHod()+", "+modelo.buscar(i).getMean_travel_time());
 				}
-<<<<<<< HEAD
+
 
 				for(int i=modelo.darTamano(); i>modelo.darTamano()-10;i--)
-=======
-				//for(UBERTrip i: viajes2)
->>>>>>> fd37f881e1db17f4b6f4266252675a896d078f4f
 				{
 					view.printMessage("Informacion viaje1: "+ modelo.buscar(i).getSourceid()+", "+modelo.buscar(i).getDstid()+", "+modelo.buscar(i).getHod()+", "+modelo.buscar(i).getMean_travel_time());
 				}
